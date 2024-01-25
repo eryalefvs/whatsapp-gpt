@@ -45,8 +45,6 @@ async function start(client: Whatsapp) {
   client.onMessage(async (message: Message) => {
     if (!message.body || message.isGroupMsg) return;
 
-    //console.log("message: ", message.body);
-
     const customerPhone = `+${message.from.replace("@c.us", "")}`;
     const customerName = message.author;
     const customerKey = `customer:${customerPhone}:chat`;
@@ -55,9 +53,6 @@ async function start(client: Whatsapp) {
     const lastChat = JSON.parse((await redis.get(customerKey)) || "{}");
 
     const customerChat: CustomerChat =
-      // lastChat?.status === "open"
-      //   ? (lastChat as CustomerChat)
-      //   :
       {
         status: "open",
         orderCode,
@@ -76,14 +71,7 @@ async function start(client: Whatsapp) {
       };
 
     console.debug(customerPhone, "👨‍💼", message.body);
-
-    // const customerChat: OpenAI.Chat.ChatCompletionMessageParam[] = [
-    //   {
-    //     role: "system",
-    //     content: prompt,
-    //   },
-    // ];
-
+    
     customerChat.messages.push({
       role: "user",
       content: message.body,
