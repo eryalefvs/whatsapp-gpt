@@ -77,6 +77,8 @@ async function start(client: Whatsapp) {
       content: message.body,
     });
 
+    await client.startTyping(message.from, true);
+
     const content = (await main(customerChat.messages)) || "Não entendi...";
 
     customerChat.messages.push({
@@ -107,6 +109,6 @@ async function start(client: Whatsapp) {
       customerChat.orderSummary = content;
     }
 
-    redis.set(customerKey, JSON.stringify(customerChat));
-  });
+     redis.set(customerKey, JSON.stringify(customerChat));
+   });
 }
