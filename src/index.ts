@@ -33,7 +33,7 @@ async function main(
 }
 
 create({
-  session: "teste(1)", //name of session
+  session: "teste(2)", //name of session
   disableWelcome: true,
 })
   .then(async (client: Whatsapp) => await start(client))
@@ -71,15 +71,17 @@ async function start(client: Whatsapp) {
       };
 
     console.debug(customerPhone, "👨‍💼", message.body);
+
+    client.startTyping(message.from, true);
     
     customerChat.messages.push({
       role: "user",
       content: message.body,
     });
 
-    await client.startTyping(message.from, true);
-
     const content = (await main(customerChat.messages)) || "Não entendi...";
+
+    client.startTyping(message.from, true);
 
     customerChat.messages.push({
       role: "assistant",
