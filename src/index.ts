@@ -1,7 +1,6 @@
 import { Message, Whatsapp, create } from "venom-bot";
 import OpenAI from "openai";
 import { config } from "./config";
-import { prompt } from "./prompts/testPrompt";
 import { redis } from "./lib/redis";
 
 interface CustomerChat {
