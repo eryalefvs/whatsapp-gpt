@@ -13,6 +13,7 @@ Com o crescente avanço da tecnologia e a mudança nos hábitos de consumo, o us
 - **Redução de Custos**: Automatizar processos de atendimento ao cliente pode levar a uma redução significativa nos custos operacionais. Os chatbots são uma solução econômica em comparação com a contratação e treinamento de uma equipe de atendimento ao cliente em tempo integral.
 
 ## Funcionalidades
+Esse protótipo contém as seguintes funcionalidades:
 
 - **Conversação Inteligente**: O chatbot utiliza o modelo de linguagem GPT da OpenAI para entender e gerar respostas inteligentes com base nas mensagens recebidas.
   
