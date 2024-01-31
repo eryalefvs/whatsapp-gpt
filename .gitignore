@@ -5,4 +5,4 @@ examplepizzaria
 tokens
 testPrompt.ts
 func.txt
-prompts/*
+src/prompts
