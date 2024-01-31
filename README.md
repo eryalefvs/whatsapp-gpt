@@ -76,7 +76,8 @@ Com o crescente avanço da tecnologia e a mudança nos hábitos de consumo, o us
 
 ## Uso
 
-Após iniciar o servidor, aparecerá o QR Code no terminal e você deverá ler com o seu WhatsApp. A partir desse ponto, se tudo ocorrer corretamente, o bot estará pronto para receber mensagens no WhatsApp e responder automaticamente. Observe que você pode treinar o GPT para agir como um assistente no contexto que desejar. 
+Após iniciar o servidor, aparecerá o QR Code no terminal e você deverá ler com o seu WhatsApp. A partir desse ponto, se tudo ocorrer corretamente, o bot estará pronto para receber mensagens no WhatsApp e responder automaticamente.
+Obs.: Esse protótipo responde qualquer tipo de contexto que o usuário solicitar, porém você pode treinar o robô para responder contextos específicos, como atendiemento ao cliente de uma determinada empresa. Veja também que são utilizadas apenas mensagens em textos, porém a biblioteca tem suporte para envio de outros tipos de mensagens, como imagens.  
 
 ## Contribuição
 
