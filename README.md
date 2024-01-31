@@ -1,4 +1,4 @@
-# Chatbot Inteligente para WhatsApp com OpenAI GPT
+# 🤖📲 Chatbot Inteligente para WhatsApp com OpenAI GPT
 
 Com o crescente avanço da tecnologia e a mudança nos hábitos de consumo, o uso de chatbots se tornou uma ferramenta cada vez mais necessária e relevante para empresas e organizações. Atualmente, os consumidores esperam respostas rápidas, personalizadas e disponíveis a qualquer momento, o que pode ser desafiador para as equipes de atendimento ao cliente tradicionais. 
 
