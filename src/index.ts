@@ -50,7 +50,7 @@ async function start(client: Whatsapp) {
     const customerKey = `customer:${customerPhone}:chat`;
     const orderCode = `#sk-${("00000" + Math.random()).slice(-5)}`;
 
-    const lastChat = JSON.parse((await redis.get(customerKey)) || "{}");
+    // const lastChat = JSON.parse((await redis.get(customerKey)) || "{}");
 
     const customerChat: CustomerChat =
       {
@@ -91,25 +91,6 @@ async function start(client: Whatsapp) {
     console.debug(customerPhone, "🤖", content);
 
     await client.sendText(message.from, content);
-
-    if (
-      customerChat.status === "open" &&
-      content.match(customerChat.orderCode)
-    ) {
-      customerChat.status = "closed";
-
-      customerChat.messages.push({
-        role: "user",
-        content:
-          "Gere um resumo de pedido para registro no sistema da pizzaria, quem está solicitando é um robô.",
-      });
-
-      const content = (await main(customerChat.messages)) || "não entendi...";
-
-      console.debug(customerPhone, "", content);
-
-      customerChat.orderSummary = content;
-    }
 
      redis.set(customerKey, JSON.stringify(customerChat));
    });

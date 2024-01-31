@@ -1,4 +1,7 @@
+.gitignore
 node_modules
 examplepizzaria
 .env
 tokens
+testPrompt.ts
+func.txt
