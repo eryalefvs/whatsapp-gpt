@@ -32,7 +32,7 @@ async function main(
 }
 
 create({
-  session: "teste(3)", //name of session
+  session: "whats-gpt", //name of session
   disableWelcome: true,
 })
   .then(async (client: Whatsapp) => await start(client))
