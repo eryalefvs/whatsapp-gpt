@@ -1,6 +1,6 @@
 .gitignore
 node_modules/
-examplepizzaria
+examplepizzaria.ts
 .env
 tokens
 testPrompt.ts

@@ -32,7 +32,7 @@ async function main(
 }
 
 create({
-  session: "teste(2)", //name of session
+  session: "teste(3)", //name of session
   disableWelcome: true,
 })
   .then(async (client: Whatsapp) => await start(client))
@@ -49,10 +49,12 @@ async function start(client: Whatsapp) {
     const customerKey = `customer:${customerPhone}:chat`;
     const orderCode = `#sk-${("00000" + Math.random()).slice(-5)}`;
 
-    // const lastChat = JSON.parse((await redis.get(customerKey)) || "{}");
+     const lastChat = JSON.parse((await redis.get(customerKey)) || "{}");
 
     const customerChat: CustomerChat =
-      {
+    lastChat?.status === "open"
+        ? (lastChat as CustomerChat) // carrega a mensagem do cliente do Redis ou crie uma nova
+        : {
         status: "open",
         orderCode,
         chatAt: new Date().toISOString(),
@@ -78,19 +80,21 @@ async function start(client: Whatsapp) {
       content: message.body,
     });
 
-    const content = (await main(customerChat.messages)) || "Não entendi...";
+    const content = (await main(
+      customerChat.messages
+      )) || "Não entendi...";
 
     client.startTyping(message.from, true);
 
     customerChat.messages.push({
       role: "assistant",
-      content,
+      content
     });
 
     console.debug(customerPhone, "🤖", content);
 
     await client.sendText(message.from, content);
 
-     redis.set(customerKey, JSON.stringify(customerChat));
+    redis.set(customerKey, JSON.stringify(customerChat));
    });
 }
