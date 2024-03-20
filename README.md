@@ -1,60 +1,60 @@
-# 🤖📲 Chatbot Inteligente para WhatsApp com OpenAI GPT
+# 🤖📲 Smart Chatbot for WhatsApp with OpenAi GPT
 
-Com o crescente avanço da tecnologia e a mudança nos hábitos de consumo, o uso de chatbots se tornou uma ferramenta cada vez mais necessária e relevante para empresas e organizações. Atualmente, os consumidores esperam respostas rápidas, personalizadas e disponíveis a qualquer momento, o que pode ser desafiador para as equipes de atendimento ao cliente tradicionais. 
+With the increasing advancement of technology and the change in consumer habits, the use of chatbots has become an increasingly necessary and relevant tool for companies and organizations. Today, consumers expect responses that are fast, personalized, and available at any time, which can be challenging for traditional customer service teams.
 
-## A Necessidade dos Chatbots
+## The need for chatbots
 
-- **Atendimento 24/7**: Com a globalização e a internet, os consumidores estão conectados a qualquer momento do dia ou da noite. Os chatbots permitem que as empresas forneçam suporte e assistência a qualquer hora, garantindo um atendimento contínuo e eficiente.
+- **24/7 service**: With globalization and the internet, consumers are connected at any time of the day or night. Chatbots allow companies to provide support and assistance at any time, ensuring continuous and efficient service.
 
-- **Escala e Eficiência**: À medida que as empresas crescem, lidar com um grande volume de consultas e solicitações de clientes pode se tornar um desafio. Os chatbots podem lidar com várias interações simultaneamente, escalando o atendimento de forma eficiente e liberando recursos humanos para tarefas mais complexas.
+- **Scale and Efficiency**: As companies grow, handling a high volume of customer inquiries and requests can become a challenge. Chatbots can handle multiple interactions simultaneously, scaling service efficiently and freeing up human resources for more complex tasks.
 
-- **Personalização**: Os consumidores esperam cada vez mais uma experiência personalizada. Os chatbots podem analisar dados do cliente em tempo real e fornecer respostas e recomendações personalizadas, aumentando o engajamento e a satisfação do cliente.
+- **Personalization**: Consumers increasingly expect a personalized experience. Chatbots can analyze customer data in real time and provide personalized responses and recommendations, increasing customer engagement and satisfaction.
 
-- **Redução de Custos**: Automatizar processos de atendimento ao cliente pode levar a uma redução significativa nos custos operacionais. Os chatbots são uma solução econômica em comparação com a contratação e treinamento de uma equipe de atendimento ao cliente em tempo integral.
+- **Cost Reduction**: Automating customer service processes can lead to a significant reduction in operational costs. Chatbots are a cost-effective solution compared to hiring and training a full-time customer service team.
 
-## Funcionalidades
-Esse protótipo contém as seguintes funcionalidades:
+## Functionalities
+This prototype contains the following functionalities:
 
-- **Conversação Inteligente**: O chatbot utiliza o modelo de linguagem GPT da OpenAI para entender e gerar respostas inteligentes com base nas mensagens recebidas.
+- **Intelligent Conversation**: The chatbot uses OpenAI's GPT language model to understand and generate intelligent responses based on incoming messages.
   
-- **Conexão com WhatsApp**: O bot é capaz de se conectar ao WhatsApp e enviar mensagens automaticamente.
+- **Connection with WhatsApp**: The bot is able to connect to WhatsApp and send messages automatically.
 
-- **Armazenamento de Contexto**: Utiliza o Redis para salvar o contexto da conversa, permitindo que o bot mantenha o histórico e continue a conversa de onde parou, mesmo quando múltiplos usuários estiverem interagindo simultaneamente.
+- **Context Storage**: Uses Redis to save the context of the conversation, allowing the bot to maintain the history and continue the conversation where it left off, even when multiple users are interacting simultaneously.
 
-## Tecnologias Utilizadas
+## Technologies Used
 
-- **TypeScript**: Linguagem de programação utilizada para o desenvolvimento do projeto, proporcionando tipagem estática e suporte moderno para o JavaScript.
+- **TypeScript**: Programming language used for project development, providing static typing and modern support for JavaScript.
 
-- **OpenAI GPT**: A inteligência artificial da OpenAI é usada para compreender as mensagens recebidas e gerar respostas coerentes e contextuais.
+- **OpenAI GPT**: OpenAI's artificial intelligence is used to understand incoming messages and generate coherent and contextual responses.
 
-- **Venom-bot**: Biblioteca utilizada para conectar-se e enviar mensagens pelo WhatsApp de forma automatizada.
+- **Venom-bot**: Library used to connect and send messages via WhatsApp in an automated way.
 
-- **Redis**: Banco de dados em memória utilizado para armazenar e gerenciar o contexto da conversa, garantindo a continuidade e personalização das interações.
+- **Redis**: In-memory database used to store and manage the context of the conversation, ensuring the continuity and personalization of interactions.
 
-- **Docker**: Utilizado para containerizar o Redis, facilitando a configuração e o gerenciamento do banco de dados.
+- **Docker**: Used to containerize Redis, facilitating database configuration and management.
 
-## Pré-requisitos
+## Prerequisites
 
-- Node.js, npm e docker instalados na máquina local.
-- Conta na OpenAI para obter uma chave de API.
+- Node.js, npm and docker installed on the local machine.
+- OpenAI account to obtain an API key.
 
-## Instalação
+## Installation
 
-1. Clone este repositório:
+1. Clone this repository:
 
     ```
     git clone https://github.com/eryalefvs/whatsapp-gpt.git
     ```
 
-2. Instale as dependências:
+2. Install the dependencies:
 
     ```
     npm install
     ```
 
-3. Configure as variáveis de ambiente:
+3. Configure environment variables:
 
-   - Crie um arquivo `.env` na raiz do projeto e defina as seguintes variáveis:
+   - Create a file `.env` in the project root and define the following variables:
 
     ```
     OPENAI_API_KEY=SuaChaveDeAPIOpenAI
@@ -63,28 +63,31 @@ Esse protótipo contém as seguintes funcionalidades:
     REDIS_DB=0
     ```
 
-4. Inicie o contêiner do Redis usando Docker:
+4. Start redis container using docker:
 
     ```
     docker-compose up -d
     ```
 
-5. Inicie o servidor:
+5. Start the server:
 
     ```
     npm run dev
     ```
 
-## Uso
+## Usage
 
-Após iniciar o servidor, aparecerá o QR Code no terminal e você deverá ler com o seu WhatsApp. A partir desse ponto, se tudo ocorrer corretamente, o bot estará pronto para receber mensagens no WhatsApp e responder automaticamente.
-Obs.: Esse protótipo responde qualquer tipo de contexto que o usuário solicitar, porém você pode treinar o robô para responder contextos específicos, como atendiemento ao cliente de uma determinada empresa. Veja também que são utilizadas apenas mensagens em textos, porém a biblioteca tem suporte para envio de outros tipos de mensagens, como imagens.  
+After starting the server, the QR Code will appear on the terminal and you must read it with your WhatsApp. From that point on, if everything goes correctly, the bot will be ready to receive messages on WhatsApp and respond automatically.
 
-## Contribuição
+## Comments
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas (issues) para relatar bugs ou propor novas funcionalidades. Se deseja contribuir diretamente, faça um fork do repositório, faça as alterações e envie um pull request.
+This prototype responds to any type of context that the user requests, but you can train the robot to respond to specific contexts, such as customer service for a specific company. Also note that only text messages are used, but the library has support for sending other types of messages, such as images.
 
-## Licença
+## Contribution
 
-Este projeto está licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
+Contributions are welcome! Feel free to open issues to report bugs or propose new features. If you want to contribute directly, fork the repository, make your changes, and submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
