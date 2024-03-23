@@ -57,7 +57,7 @@ This prototype contains the following functionalities:
    - Create a file `.env` in the project root and define the following variables:
 
     ```
-    OPENAI_API_KEY=SuaChaveDeAPIOpenAI
+    OPENAI_API_KEY=YourKeyAPIOpenAI
     REDIS_HOST=localhost
     REDIS_PORT=6379
     REDIS_DB=0
